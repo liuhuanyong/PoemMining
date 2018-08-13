@@ -1,0 +1,91 @@
+
+              <!DOCTYPE HTML>
+               <html>
+                   <head>
+                       <meta charset="utf-8"><link rel="icon" href="https://static.jianshukeji.com/highcharts/images/favicon.ico">
+                       <meta name="viewport" content="width=device-width, initial-scale=1">
+                       <script src="https://img.hcharts.cn/jquery/jquery-1.8.3.min.js"></script>
+                       <script src="https://img.hcharts.cn/highmaps/highmaps.js"></script>
+                       <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.6/proj4.js"></script>
+                   </head>
+                   <body>
+                       <div id="container" style=" height: 1000px"></div>
+                       <script src="https://data.jianshukeji.com/geochina/china.js"></script>
+                       <script>
+                           var data = [
+                                   {name:'常州市', lat:31.81175003, lon:119.970599},
+{name:'扬州知州', lat:19.77924, lon:110.46628},
+{name:'郏县', lat:33.971800, lon:113.212620},
+{name:'杭州市', lat:30.27415, lon:120.15515},
+{name:'颍州西湖', lat:32.91294, lon:115.65523},
+{name:'芜湖市', lat:31.35246, lon:118.43313},
+{name:'阜阳市', lat:32.889630, lon:115.814950},
+{name:'眉州眉山', lat:30.0745, lon:103.82843},
+{name:'密州', lat:35.99058, lon:119.41038},
+{name:'海南省', lat:20.019970, lon:110.348630},
+{name:'惠阳区', lat:22.788510, lon:114.456460},
+{name:'惠州市', lat:23.110750, lon:114.416790},
+{name:'东坡区', lat:30.042280, lon:103.832110},
+{name:'徐州市', lat:34.20820856, lon:117.2786162},
+{name:'定州知州', lat:19.77924, lon:110.46628},
+{name:'江苏省', lat:32.060710, lon:118.762950},
+{name:'汝州郏城县', lat:25.532816, lon:113.684726},
+{name:'寄生西蜀州', lat:30.41875, lon:104.53572},
+{name:'诸城市', lat:35.995830, lon:119.409830},
+{name:'湖州市', lat:30.89507651, lon:120.0830807},
+{name:'西湖', lat:30.2221, lon:120.12833},
+{name:'儋州市', lat:19.52297864, lon:109.5766823},
+{name:'赤壁山', lat:29.88182, lon:113.62787},
+{name:'黄州城', lat:30.45082, lon:114.87968},
+{name:'海南岛儋州', lat:19.53328, lon:109.58274},
+{name:'永州市', lat:26.42319287, lon:111.6081895},
+{name:'黄冈市', lat:30.453470, lon:114.872380},
+{name:'大理白族自治州', lat:25.606480, lon:100.267640},
+{name:'湖州知州', lat:19.77924, lon:110.46628},
+{name:'儋州市', lat:19.520930, lon:109.580690},
+{name:'杀尽村', lat:30.16624, lon:103.50328},
+{name:'惠州市', lat:23.11319541, lon:114.4120215},
+
+                                   ];
+
+                           var map = new Highcharts.Map('container', {
+                               title: {
+                                   text: '苏轼足迹地图'
+                               },
+                               mapNavigation: {
+                                   enabled: true,
+                                   buttonOptions: {
+                                       verticalAlign: 'bottom'
+                                   }
+                               },
+                               tooltip: {
+                                   useHTML: true,
+                                   formatter: function() {
+                                       return this.point.name;
+                                   }
+                               },
+                               plotOptions: {
+                                   series: {
+                                       dataLabels: {
+                                           enabled: true
+                                       },
+                                       marker: {
+                                           radius: 3
+                                       }
+                                   }
+                               },
+                               series: [{
+                                   // 空数据列，用于展示底图
+                                   mapData: Highcharts.maps['cn/china'],
+                                   showInLegend: false
+                               },{
+                                   type: 'mappoint',
+                                   name: '苏轼足迹地图',
+                                   data: data
+                               }]
+                           });
+                       <!--});-->
+                       </script>
+                   </body>
+               </html>
+               

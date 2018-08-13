@@ -1,0 +1,87 @@
+
+              <!DOCTYPE HTML>
+               <html>
+                   <head>
+                       <meta charset="utf-8"><link rel="icon" href="https://static.jianshukeji.com/highcharts/images/favicon.ico">
+                       <meta name="viewport" content="width=device-width, initial-scale=1">
+                       <script src="https://img.hcharts.cn/jquery/jquery-1.8.3.min.js"></script>
+                       <script src="https://img.hcharts.cn/highmaps/highmaps.js"></script>
+                       <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.6/proj4.js"></script>
+                   </head>
+                   <body>
+                       <div id="container" style=" height: 1000px"></div>
+                       <script src="https://data.jianshukeji.com/geochina/china.js"></script>
+                       <script>
+                           var data = [
+                                   {name:'芜湖市', lat:31.35397852, lon:118.4278122},
+{name:'起知江宁府', lat:37.81173, lon:112.55281},
+{name:'吴江冷', lat:31.01963, lon:120.81404},
+{name:'南昌市', lat:28.68202, lon:115.85794},
+{name:'镇江市', lat:32.19045782, lon:119.4189564},
+{name:'衢州市', lat:28.97299247, lon:118.8551322},
+{name:'金乡县', lat:35.066610, lon:116.311480},
+{name:'柳州市', lat:24.32845613, lon:109.4238211},
+{name:'上海市', lat:31.23037, lon:121.4737},
+{name:'洛阳市', lat:34.6190627, lon:112.4471901},
+{name:'遇陷镇', lat:30.517467, lon:113.986546},
+{name:'南昌市', lat:28.682020, lon:115.857940},
+{name:'绍兴市', lat:30.030330, lon:120.580200},
+{name:'商丘市', lat:34.414270, lon:115.656350},
+{name:'南京市', lat:32.058380, lon:118.796470},
+{name:'汴京', lat:34.79481, lon:114.37115},
+{name:'益都', lat:36.67705, lon:118.47462},
+{name:'湖州市', lat:30.89507651, lon:120.0830807},
+{name:'南京市', lat:32.0604118, lon:118.7911366},
+{name:'杭州市', lat:30.27415, lon:120.15515},
+{name:'南京市', lat:32.05838, lon:118.79647},
+{name:'贵池区', lat:30.686730, lon:117.567330},
+{name:'马鞍山市', lat:31.67067, lon:118.50611},
+{name:'金华市', lat:29.08125044, lon:119.6427761},
+{name:'济南市', lat:36.64981579, lon:117.1140788},
+{name:'跸章安', lat:28.708804, lon:121.415626},
+{name:'缗城', lat:35.13728, lon:116.41945},
+{name:'绍兴市', lat:30.03279508, lon:120.5754159},
+
+                                   ];
+
+                           var map = new Highcharts.Map('container', {
+                               title: {
+                                   text: '李清照足迹地图'
+                               },
+                               mapNavigation: {
+                                   enabled: true,
+                                   buttonOptions: {
+                                       verticalAlign: 'bottom'
+                                   }
+                               },
+                               tooltip: {
+                                   useHTML: true,
+                                   formatter: function() {
+                                       return this.point.name;
+                                   }
+                               },
+                               plotOptions: {
+                                   series: {
+                                       dataLabels: {
+                                           enabled: true
+                                       },
+                                       marker: {
+                                           radius: 3
+                                       }
+                                   }
+                               },
+                               series: [{
+                                   // 空数据列，用于展示底图
+                                   mapData: Highcharts.maps['cn/china'],
+                                   showInLegend: false
+                               },{
+                                   type: 'mappoint',
+                                   name: '李清照足迹地图',
+                                   data: data
+                               }]
+                           });
+                       <!--});-->
+                       </script>
+                   </body>
+               </html>
+               

@@ -1,0 +1,110 @@
+
+              <!DOCTYPE HTML>
+               <html>
+                   <head>
+                       <meta charset="utf-8"><link rel="icon" href="https://static.jianshukeji.com/highcharts/images/favicon.ico">
+                       <meta name="viewport" content="width=device-width, initial-scale=1">
+                       <script src="https://img.hcharts.cn/jquery/jquery-1.8.3.min.js"></script>
+                       <script src="https://img.hcharts.cn/highmaps/highmaps.js"></script>
+                       <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.6/proj4.js"></script>
+                   </head>
+                   <body>
+                       <div id="container" style=" height: 1000px"></div>
+                       <script src="https://data.jianshukeji.com/geochina/china.js"></script>
+                       <script>
+                           var data = [
+                                   {name:'扬州市', lat:32.393580, lon:119.412690},
+{name:'庐山', lat:29.54244, lon:115.97442},
+{name:'武城县', lat:37.213170, lon:116.069230},
+{name:'河北省', lat:38.035990, lon:114.469790},
+{name:'河南省商丘县', lat:34.40185, lon:115.72059},
+{name:'成都市', lat:30.65227968, lon:104.0725574},
+{name:'武汉市', lat:30.592760, lon:114.305250},
+{name:'随州市', lat:31.69208833, lon:113.3764415},
+{name:'魏州', lat:36.35068, lon:114.95613},
+{name:'安陆白兆山', lat:31.31198, lon:113.56156},
+{name:'太原市', lat:37.87011447, lon:112.5436501},
+{name:'重庆市', lat:29.564710, lon:106.550730},
+{name:'天水市', lat:34.58085, lon:105.72486},
+{name:'扬州市', lat:32.39358, lon:119.41269},
+{name:'四川省江油县', lat:31.76222, lon:104.75532},
+{name:'沈丘县', lat:33.4094, lon:115.09856},
+{name:'随县', lat:31.853800, lon:113.299950},
+{name:'江苏省滦阳县', lat:31.406845, lon:119.477118},
+{name:'四川省', lat:30.650890, lon:104.075720},
+{name:'安陆市', lat:31.25554, lon:113.68913},
+{name:'安禄山', lat:27.893073, lon:106.615652},
+{name:'青莲乡', lat:31.19015, lon:109.23826},
+{name:'济南市', lat:36.651840, lon:117.120090},
+{name:'商丘市', lat:34.41552227, lon:115.6506827},
+{name:'湖北省安陆县', lat:31.26192, lon:113.68508},
+{name:'桐梓县', lat:28.133210, lon:106.825020},
+{name:'安陆寿山', lat:30.015825, lon:103.981094},
+{name:'邢台市', lat:37.07055, lon:114.50443},
+{name:'荆州市', lat:30.33764133, lon:112.2336943},
+{name:'河北省', lat:38.035990, lon:114.469790},
+{name:'济南市', lat:36.65184, lon:117.12009},
+{name:'天水市', lat:34.580850, lon:105.724860},
+{name:'六十三州', lat:30.80452, lon:108.23828},
+{name:'白帝城', lat:31.04046, lon:109.57493},
+{name:'弼东镇', lat:23.547274, lon:116.321834},
+{name:'开封市', lat:34.797260, lon:114.307310},
+{name:'德州安陵县', lat:37.359277, lon:116.536672},
+{name:'甘肃天水县', lat:34.3131, lon:105.60726},
+{name:'开封市', lat:34.79726, lon:114.30731},
+{name:'巴西郡', lat:34.72296, lon:113.70819},
+{name:'西安市', lat:34.34127, lon:108.93984},
+{name:'南阳市', lat:32.99263234, lon:112.5225048},
+{name:'河南省登封县', lat:34.4458, lon:113.27611},
+{name:'九江市', lat:29.70548, lon:116.00146},
+{name:'宣城市', lat:30.94287029, lon:118.7538213},
+{name:'峨眉山', lat:29.56583, lon:103.34008},
+{name:'洛阳市', lat:34.6190627, lon:112.4471901},
+{name:'南阳市', lat:32.990730, lon:112.528510},
+{name:'兴庆池', lat:33.77846, lon:120.22733},
+{name:'西塞驿', lat:30.26636, lon:115.42137},
+{name:'山西省', lat:37.873430, lon:112.562720},
+
+                                   ];
+
+                           var map = new Highcharts.Map('container', {
+                               title: {
+                                   text: '李白足迹地图'
+                               },
+                               mapNavigation: {
+                                   enabled: true,
+                                   buttonOptions: {
+                                       verticalAlign: 'bottom'
+                                   }
+                               },
+                               tooltip: {
+                                   useHTML: true,
+                                   formatter: function() {
+                                       return this.point.name;
+                                   }
+                               },
+                               plotOptions: {
+                                   series: {
+                                       dataLabels: {
+                                           enabled: true
+                                       },
+                                       marker: {
+                                           radius: 3
+                                       }
+                                   }
+                               },
+                               series: [{
+                                   // 空数据列，用于展示底图
+                                   mapData: Highcharts.maps['cn/china'],
+                                   showInLegend: false
+                               },{
+                                   type: 'mappoint',
+                                   name: '李白足迹地图',
+                                   data: data
+                               }]
+                           });
+                       <!--});-->
+                       </script>
+                   </body>
+               </html>
+               

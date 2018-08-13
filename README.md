@@ -12,12 +12,22 @@ Chinese Classic Poem Mining Project including corpus buiding by spyder and conte
 # 项目结构
 项目主要包括两个任务:    
 1) 古代诗词语料库的构建     
-2) 是基于古代诗词语料库的挖掘  
+2) 基于古代诗词语料库的挖掘
 
 # 脚本结构
-1, poem_spider.py:主要完成古代诗词语料库的构建，选取的是古诗文网 (https://so.gushiwen.org)，一共采集到92127首古代诗词，结果已经保存至corpus_poem.zip文件当中  
-2, poem_process.py:主要基于构建起来的古诗词语料库，进行基础的文本分析，根据网站上的用户交互信息，得到古诗词文本本身的外部信息，结果保存至result文件夹中  
-3, atm_model.py:利用作者－主题模型，对古诗词进行主题分析，最终目的是实现作者主题分布与风格聚类  
-
-# 下一步的工作  
-目前已经完成项目任务１，构建起了9万级别的古诗词语料库，接下来将逐步实现对任务2的挖掘  
+1, poem_spider.py:主要完成古代诗词语料库的构建，选取的是古诗文网 (https://so.gushiwen.org)，结果已经保存至corpus_poem.zip文件当中
+2, poem_process.py:主要基于构建起来的古诗词语料库，进行基础的文本分析，根据网站上的用户交互信息，得到古诗词文本本身的外部信息
+3, atm_model.py:利用作者－主题模型，对古诗词进行主题分析，最终目的是实现作者主题分布与风格聚类
+4, location_mining.py:基于诗人百科生平记事的地点挖掘与可视化，最终最终实现对诗人关联地点的一键生成．
+# 阶段性成果
+1, 古代诗词语料库,一共采集到92127首古代诗词
+2, 古代诗词外部计量分析结果，结果保存至result文件夹
+3, 诗人足迹一键生成，示例如下：
+李白足迹
+![image](https://github.com/liuhuanyong/PoemMining/blob/master/image/libai.png)
+李清照足迹
+![image](https://github.com/liuhuanyong/PoemMining/blob/master/image/libai.png)
+苏轼足迹
+![image](https://github.com/liuhuanyong/PoemMining/blob/master/image/sushi.png)
+文天祥足迹
+![image](https://github.com/liuhuanyong/PoemMining/blob/master/image/wtx.png)

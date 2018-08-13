@@ -1,0 +1,106 @@
+
+              <!DOCTYPE HTML>
+               <html>
+                   <head>
+                       <meta charset="utf-8"><link rel="icon" href="https://static.jianshukeji.com/highcharts/images/favicon.ico">
+                       <meta name="viewport" content="width=device-width, initial-scale=1">
+                       <script src="https://img.hcharts.cn/jquery/jquery-1.8.3.min.js"></script>
+                       <script src="https://img.hcharts.cn/highmaps/highmaps.js"></script>
+                       <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.6/proj4.js"></script>
+                   </head>
+                   <body>
+                       <div id="container" style=" height: 1000px"></div>
+                       <script src="https://data.jianshukeji.com/geochina/china.js"></script>
+                       <script>
+                           var data = [
+                                   {name:'淮安市', lat:33.61159792, lon:119.0099531},
+{name:'宁都县', lat:26.470190, lon:116.009410},
+{name:'皋亭山', lat:30.38677, lon:120.21904},
+{name:'真州', lat:32.26538, lon:119.1831},
+{name:'福州市', lat:26.0772917, lon:119.2921462},
+{name:'于都县', lat:25.951840, lon:115.415440},
+{name:'杭州市', lat:30.274150, lon:120.155150},
+{name:'南昌市', lat:28.682020, lon:115.857940},
+{name:'抚州市', lat:27.94781, lon:116.35809},
+{name:'镇江市', lat:32.19045782, lon:119.4189564},
+{name:'湖南省', lat:28.112660, lon:112.983400},
+{name:'潮州市', lat:23.65912506, lon:116.6188815},
+{name:'邵阳市', lat:27.2389, lon:111.4677},
+{name:'虞桥', lat:31.66884, lon:120.08161},
+{name:'福建省', lat:26.09982, lon:119.29659},
+{name:'扬州市', lat:32.39358, lon:119.41269},
+{name:'吉安市', lat:27.11382, lon:114.99376},
+{name:'泰州市', lat:32.45716648, lon:119.9180336},
+{name:'建康', lat:32.023586, lon:118.792489},
+{name:'永丰县', lat:27.318150, lon:115.441890},
+{name:'永州市', lat:26.42319287, lon:111.6081895},
+{name:'浙江省', lat:30.265550, lon:120.153600},
+{name:'余杭', lat:30.26968, lon:119.93785},
+{name:'宰相江', lat:23.31517, lon:113.84186},
+{name:'长沙市', lat:28.22778, lon:112.93886},
+{name:'芜湖市', lat:31.35246, lon:118.43313},
+{name:'漳州市', lat:24.51610308, lon:117.642668},
+{name:'常州市', lat:31.81175003, lon:119.970599},
+{name:'吉安市', lat:27.113820, lon:114.993760},
+{name:'朝阳县', lat:41.367820, lon:120.295920},
+{name:'南京市', lat:32.05838, lon:118.79647},
+{name:'温州市', lat:27.9981181, lon:120.6954645},
+{name:'开封市', lat:34.79726, lon:114.30731},
+{name:'方石岭', lat:26.64502, lon:115.37751},
+{name:'福建省', lat:26.099820, lon:119.296590},
+{name:'江西省', lat:28.67417, lon:115.91004},
+{name:'福州市', lat:26.074210, lon:119.296470},
+{name:'蕲州', lat:30.07453, lon:115.3429},
+{name:'永丰县', lat:27.318150, lon:115.441890},
+{name:'赣州市', lat:25.831090, lon:114.934760},
+{name:'鄱阳县', lat:29.005630, lon:116.703430},
+{name:'梅州市', lat:24.294165, lon:116.129232},
+{name:'赣州市', lat:25.83231512, lon:114.92897},
+{name:'淮南东路', lat:32.651547, lon:117.036766},
+{name:'泰和', lat:26.81518, lon:114.9174},
+{name:'中山市', lat:22.51862326, lon:113.387346},
+{name:'番阳', lat:18.87621, lon:109.4006},
+
+                                   ];
+
+                           var map = new Highcharts.Map('container', {
+                               title: {
+                                   text: '文天祥足迹地图'
+                               },
+                               mapNavigation: {
+                                   enabled: true,
+                                   buttonOptions: {
+                                       verticalAlign: 'bottom'
+                                   }
+                               },
+                               tooltip: {
+                                   useHTML: true,
+                                   formatter: function() {
+                                       return this.point.name;
+                                   }
+                               },
+                               plotOptions: {
+                                   series: {
+                                       dataLabels: {
+                                           enabled: true
+                                       },
+                                       marker: {
+                                           radius: 3
+                                       }
+                                   }
+                               },
+                               series: [{
+                                   // 空数据列，用于展示底图
+                                   mapData: Highcharts.maps['cn/china'],
+                                   showInLegend: false
+                               },{
+                                   type: 'mappoint',
+                                   name: '文天祥足迹地图',
+                                   data: data
+                               }]
+                           });
+                       <!--});-->
+                       </script>
+                   </body>
+               </html>
+               

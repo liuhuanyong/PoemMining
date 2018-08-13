@@ -92,11 +92,16 @@ class PoemMining:
 
     '''查找出作者出现的地点信息'''
     def collect_author_location(self):
+        name_dict = {i.strip().split(',')[0]: i.strip().split(',')[2:] for i in open('city_map.txt') if
+                          len(i.strip().split(',')) == 5}
         author_dict = {}
         f = open('author_location.txt', 'w+')
+        count = 0
         for item in self.db.find():
-            seg_content = item['seg_content']
-            ns = [i.split('/')[0] for i in seg_content if i.split('/')[-1] == 'ns' and len(i.split('/')[0]) > 1]
+            count += 1
+            print(count)
+            content = item['content'] + item['title']
+            ns = [i for i in name_dict if i in content]
             if not ns:
                 continue
             author = item['author']
@@ -123,4 +128,4 @@ handler = PoemMining()
 handler.poems_main()
 # handler.collect_tags()
 # handler.collect_locations()
-# handler.collect_author_location()
+handler.collect_author_location()
