@@ -25,8 +25,8 @@ Chinese Classic Poem Mining Project including corpus buiding by spyder and conte
 3, 诗人足迹一键生成，使用方式如下，结果会直接生成以搜索诗人名字命名的html文件：
 
     from location_mining import *
-    name = ''
-    handler 李白= PoetWalk()
+    name = '李白'
+    handler = PoetWalk()
     handler.mining_main(name)
 以下是举例结果：     
 李白足迹
