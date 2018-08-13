@@ -22,7 +22,13 @@ Chinese Classic Poem Mining Project including corpus buiding by spyder and conte
 # 阶段性成果
 1, 古代诗词语料库,一共采集到92127首古代诗词  
 2, 古代诗词外部计量分析结果，结果保存至result文件夹  
-3, 诗人足迹一键生成，示例如下：  
+3, 诗人足迹一键生成，使用方式如下，结果会直接生成以搜索诗人名字命名的html文件：
+
+    from location_mining import *
+    name = ''
+    handler 李白= PoetWalk()
+    handler.mining_main(name)
+以下是举例结果：     
 李白足迹
 ![image](https://github.com/liuhuanyong/PoemMining/blob/master/image/libai.png)
 李清照足迹
