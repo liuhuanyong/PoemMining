@@ -26,7 +26,7 @@ Chinese Classic Poem Mining Project including corpus buiding by spyder and conte
 李白足迹
 ![image](https://github.com/liuhuanyong/PoemMining/blob/master/image/libai.png)
 李清照足迹
-![image](https://github.com/liuhuanyong/PoemMining/blob/master/image/libai.png)
+![image](https://github.com/liuhuanyong/PoemMining/blob/master/image/lqz.png)
 苏轼足迹
 ![image](https://github.com/liuhuanyong/PoemMining/blob/master/image/sushi.png)
 文天祥足迹
