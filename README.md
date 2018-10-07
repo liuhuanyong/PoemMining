@@ -37,3 +37,6 @@ Chinese Classic Poem Mining Project including corpus buiding by spyder and conte
 ![image](https://github.com/liuhuanyong/PoemMining/blob/master/image/sushi.png)
 文天祥足迹
 ![image](https://github.com/liuhuanyong/PoemMining/blob/master/image/wtx.png)
+
+
+If any question about the project or me ,see https://liuhuanyong.github.io/
